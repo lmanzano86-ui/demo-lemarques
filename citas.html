@@ -50,6 +50,9 @@ h2{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;text-al
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .ok{text-align:center;padding:30px 10px}
 .ok .big{font-size:52px;color:var(--dorado)}
+.codigo-box{border:1.5px dashed var(--dorado);background:#fff;padding:18px 14px;margin:18px auto;max-width:340px}
+.codigo-box span{display:block;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8a6d1f;margin-bottom:6px}
+.codigo-box b{font-family:'Cormorant Garamond',serif;font-size:32px;letter-spacing:6px;color:#1c1a14;padding-left:6px}
 .ok h2{margin:12px 0}
 .ok p{color:var(--gris)}
 .pantalla{display:none}
@@ -115,6 +118,10 @@ h2{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:500;text-al
     <div class="ok">
       <div class="big">✦</div>
       <h2 data-es="¡Cita reservada!" data-en="Appointment booked!">¡Cita reservada!</h2>
+      <div class="codigo-box">
+        <span data-es="Tu código de confirmación" data-en="Your confirmation code">Tu código de confirmación</span>
+        <b id="codigo-cita">LM-······</b>
+      </div>
       <p id="conf-texto"></p>
       <p style="margin-top:10px" data-es="Te contactaremos para confirmar. Tu momento de brillar comienza aquí." data-en="We'll contact you to confirm. Your moment to shine starts here.">Te contactaremos para confirmar. Tu momento de brillar comienza aquí.</p>
       <a class="btn btn-negro" id="btn-wpp-conf" href="#" data-es="Confirmar por WhatsApp" data-en="Confirm via WhatsApp">Confirmar por WhatsApp</a>
@@ -223,10 +230,18 @@ function renderResumen(){
   '<div class="linea total"><span>Total</span><span>$'+s.p+'</span></div>';
  document.getElementById('precio-pago').textContent='$'+s.p;
 }
+function generarCodigo(){
+ var chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+ var c='';
+ for(var i=0;i<6;i++) c+=chars[Math.floor(Math.random()*chars.length)];
+ return 'LM-'+c;
+}
 function confirmar(){
  var s=T[LANG].servicios[sel.serv];
  var f=new Date(sel.fecha+'T12:00:00');
- var txt=(LANG==='es'?'Servicio':'Service')+': '+s.n+' ($'+s.p+' '+T[LANG].muestra+') · '+(LANG==='es'?'Especialista':'Specialist')+': '+T[LANG].staff[sel.staff]+' · '+diasN[LANG][f.getDay()]+' '+f.getDate()+' '+meses[LANG][f.getMonth()]+' '+sel.hora+' · '+document.getElementById('nombre').value;
+ var codigo=generarCodigo();
+ document.getElementById('codigo-cita').textContent=codigo;
+ var txt=(LANG==='es'?'Código':'Code')+': '+codigo+' · '+(LANG==='es'?'Servicio':'Service')+': '+s.n+' ($'+s.p+' '+T[LANG].muestra+') · '+(LANG==='es'?'Especialista':'Specialist')+': '+T[LANG].staff[sel.staff]+' · '+diasN[LANG][f.getDay()]+' '+f.getDate()+' '+meses[LANG][f.getMonth()]+' '+sel.hora+' · '+document.getElementById('nombre').value;
  document.getElementById('conf-texto').textContent=txt;
  var msg=encodeURIComponent((LANG==='es'?'Hola Le Marqués, quiero confirmar mi cita: ':'Hi Le Marqués, I want to confirm my appointment: ')+txt);
  document.getElementById('btn-wpp-conf').href='https://wa.me/18132972107?text='+msg;
