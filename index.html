@@ -3,228 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mis páginas — Lester Manzano</title>
-<link rel="apple-touch-icon" href="icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Mis páginas">
-<meta name="theme-color" content="#141414">
+<title>Le Marqués Hair & Beauty — Tampa, FL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+:root{
+  --negro:#111008; --marfil:#faf7f0; --blanco:#ffffff;
+  --dorado:#b8912f; --dorado-claro:#d9b95c; --dorado-suave:#efe3c2;
+  --gris:#7a746a; --linea:#e7ddc8;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#141414;color:#f5f5f5;line-height:1.55;min-height:100vh}
-.demo-bar{background:#000;color:#f5c542;text-align:center;font-size:12px;padding:8px 12px;letter-spacing:1px;font-weight:bold}
-header{text-align:center;padding:40px 20px 10px}
-header h1{font-size:30px;letter-spacing:1px}
-header h1 span{color:#f5c542}
-header p{color:#b9a86a;margin-top:8px;font-size:15px}
-.topnav{position:sticky;top:0;z-index:50;background:#0d0d0d;border-bottom:1px solid #3a3a3a;display:flex;justify-content:center;gap:8px;padding:10px 12px;flex-wrap:wrap}
-.topnav a{color:#f5f5f5;text-decoration:none;font-size:14px;font-weight:bold;padding:8px 16px;border-radius:20px;border:1px solid #3a3a3a}
-.topnav a:hover{border-color:#f5c542}
-.seccion{scroll-margin-top:70px}
-html{scroll-behavior:smooth}
-main{max-width:640px;margin:0 auto;padding:24px 20px 40px}
-.seccion{margin-bottom:36px}
-.sec-head{text-align:center;margin-bottom:16px}
-.sec-head h2{font-size:22px;letter-spacing:.5px}
-.sec-head p{color:#8a7a4a;font-size:13px;margin-top:2px}
-.seccion .card, .seccion .empty{margin-bottom:14px}
-.empty{background:#1a1a1a;border:1px dashed #4a4a4a;border-radius:12px;padding:18px;text-align:center;color:#8a8a8a;font-size:14px}
-.card{background:#1f1f1f;border:1px solid #3a3a3a;border-left:4px solid #f5c542;border-radius:12px;padding:20px;text-decoration:none;color:inherit;display:block}
-.card:hover{border-color:#f5c542}
-.card .tag{font-size:11px;font-weight:bold;letter-spacing:1px;color:#f5c542;text-transform:uppercase}
-.card h2{font-size:19px;margin:6px 0 4px}
-.card p{font-size:14px;color:#c9c9c9}
-.card .url{font-size:12px;color:#f5c542;margin-top:10px;word-break:break-all}
-footer{text-align:center;padding:24px;font-size:13px;color:#8a7a4a}
-footer b{color:#f5c542}
+body{font-family:'Jost',sans-serif;background:var(--marfil);color:#262219;line-height:1.7;font-weight:300}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:620px;margin:0 auto;padding:0 26px}
+.serif{font-family:'Cormorant Garamond',serif}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+/* top bar */
+.topbar{background:var(--negro);color:var(--dorado-claro);font-size:12px;letter-spacing:2.5px;text-align:center;padding:10px 12px;text-transform:uppercase}
+.topbar a{text-decoration:none}
+/* header */
+header{background:var(--marfil);text-align:center;padding:34px 16px 26px}
+.medallon{width:104px;height:104px;border-radius:50%;margin:0 auto 16px;border:1px solid var(--dorado);padding:5px;background:#fff}
+.medallon img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.marca{font-family:'Cormorant Garamond',serif;font-size:31px;letter-spacing:7px;color:#1c1a14;font-weight:500;padding-left:7px}
+.marca-sub{font-family:'Great Vibes',cursive;font-size:27px;color:var(--dorado);margin-top:2px}
+.lang{margin-top:14px;font-size:12px;letter-spacing:3px}
+.lang button{background:none;border:none;color:var(--gris);font-family:'Jost';font-size:12px;letter-spacing:3px;cursor:pointer;padding:4px 8px}
+.lang button.activo{color:var(--dorado);border-bottom:1px solid var(--dorado)}
+/* hero */
+.hero{text-align:center;padding:64px 24px 58px;background:linear-gradient(180deg,#f4eee1 0%,var(--marfil) 100%)}
+.hero .script{font-size:44px;color:var(--dorado);line-height:1.3}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;color:#1c1a14;margin:14px 0 8px;letter-spacing:.5px}
+.hero p{color:var(--gris);font-size:16px;max-width:440px;margin:0 auto}
+.divisor{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px auto;max-width:280px}
+.divisor::before,.divisor::after{content:"";height:1px;flex:1;background:var(--dorado-suave)}
+.divisor span{color:var(--dorado);font-size:13px}
+.cta{display:flex;flex-direction:column;gap:12px;max-width:320px;margin:30px auto 0}
+.btn{display:block;text-align:center;text-decoration:none;letter-spacing:2.5px;padding:16px;font-size:14px;text-transform:uppercase;font-weight:400}
+.btn-negro{background:#1c1a14;color:var(--marfil)}
+.btn-oro-borde{border:1px solid var(--dorado);color:#8a6d1f;background:transparent}
+.btn-texto{color:var(--gris);font-size:13px;letter-spacing:1px;text-transform:none;padding:6px}
+/* secciones */
+section{padding:56px 0}
+.kicker{text-align:center;font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--dorado);margin-bottom:6px}
+h2.titulo{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:32px;text-align:center;color:#1c1a14;margin-bottom:6px}
+.sub{text-align:center;color:var(--gris);font-size:15px;margin-bottom:34px}
+/* servicios */
+.serv{background:#fff;border:1px solid var(--linea);padding:30px 20px;text-align:center;position:relative}
+.serv::after{content:"";position:absolute;left:24px;right:24px;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--dorado),transparent);opacity:0;transition:opacity .3s}
+.serv-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.serv .mark{color:var(--dorado);font-size:15px;margin-bottom:12px;letter-spacing:2px}
+.serv h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#1c1a14}
+.serv p{font-size:13.5px;color:var(--gris);margin-top:6px}
+/* banner oscuro */
+.banner{background:var(--negro);text-align:center;padding:64px 26px;position:relative;overflow:hidden}
+.banner .script{font-size:40px;color:var(--dorado-claro);line-height:1.35}
+.banner p{color:#b9ae97;font-size:15px;max-width:420px;margin:16px auto 0}
+.banner .btn{max-width:320px;margin:28px auto 0}
+/* galeria */
+.gal{display:grid;grid-template-columns:1fr;gap:22px}
+.gal figure{background:#fff;border:1px solid var(--linea);padding:10px}
+.gal img{width:100%;height:auto}
+.gal figcaption{padding:12px 6px 6px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gris);text-align:center}
+/* educacion */
+.edu{background:#fff;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.edu-card{text-align:center;max-width:480px;margin:0 auto}
+.edu-card .grad{font-size:12px;letter-spacing:4px;color:var(--dorado);text-transform:uppercase}
+.edu-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;margin:10px 0;color:#1c1a14}
+.edu-card p{color:var(--gris);font-size:15px}
+/* reseñas */
+.res{background:#fff;border:1px solid var(--linea);padding:28px 24px;margin-bottom:16px;text-align:center}
+.res .stars{color:var(--dorado);letter-spacing:5px;font-size:15px;margin-bottom:10px}
+.res p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#3a352a}
+.res .quien{margin-top:12px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gris)}
+.res-fuente{text-align:center;color:var(--gris);font-size:12px;letter-spacing:2px;margin-top:8px}
+/* visita */
+.visita{background:var(--negro);color:#cfc4ae}
+.visita h2.titulo{color:var(--marfil)}
+.visita .kicker{color:var(--dorado-claro)}
+.dato{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
+.dato .i{color:var(--dorado);font-size:18px;min-width:24px;text-align:center}
+.dato b{display:block;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--dorado-claro);font-weight:400;margin-bottom:2px}
+.dato span{font-size:16px}
+.dato a{text-decoration:none;border-bottom:1px solid #4a3d20}
+.qrs{display:flex;gap:26px;justify-content:center;margin:30px 0 8px;flex-wrap:wrap}
+.qr{text-align:center}
+.qr img{width:124px;height:124px;background:#fff;padding:8px;margin:0 auto}
+.qr p{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--dorado-claro);margin-top:10px}
+/* footer */
+footer{background:#0a0906;text-align:center;padding:30px 18px;font-size:12px;letter-spacing:1.5px;color:#6e6558}
+footer .demo-tag{display:inline-block;margin-top:14px;border:1px dashed #4a3d20;color:#8a7648;font-size:10px;padding:6px 12px;letter-spacing:2px}
 </style>
 </head>
 <body>
-<div class="demo-bar">&#9733; PANEL PRIVADO &mdash; SOLO PARA TI &#9733;</div>
-<header>
-<h1>MIS <span>P&Aacute;GINAS</span></h1>
-<p>Todos tus sitios publicados en un solo lugar</p>
-</header>
-<nav class="topnav">
-<a href="#sec-lester">🇺🇸 Mis páginas</a><a href="#sec-espana">🇪🇸 España</a><a href="#sec-brasil">🇧🇷 Brasil</a><a href="#sec-paises_bajos">🇳🇱 Países Bajos</a>
-</nav>
-<main>
-<div class="seccion" id="sec-lester">
 
-<a class="card" href="https://lmanzano86-ui.github.io/formulario-rhp/formulario-registro-rhp.html">
-<div class="tag">Herramienta de ventas</div>
-<h2>Formulario de registro RHP</h2>
-<p>Registro de prospectos en mercados y eventos, con rifa y exportación a CSV.</p>
-<div class="url">lmanzano86-ui.github.io/formulario-rhp/formulario-registro-rhp.html</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/carriers-equipo/">
-<div class="tag">Herramienta de equipo</div>
-<h2>Carriers del equipo</h2>
-<p>Directorio de carriers y enlaces de contratación para tu equipo de agentes.</p>
-<div class="url">lmanzano86-ui.github.io/carriers-equipo/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-taqueria/">
-<div class="tag">Demo para cliente</div>
-<h2>Demo — Taquería El Faro</h2>
-<p>Ejemplo de página web para vender el paquete a restaurantes.</p>
-<div class="url">lmanzano86-ui.github.io/demo-taqueria/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-hacienda/">
-<div class="tag">Demo para cliente</div>
-<h2>Demo — Restaurante La Hacienda</h2>
-<p>Ejemplo de página web con datos reales del restaurante colombiano.</p>
-<div class="url">lmanzano86-ui.github.io/demo-hacienda/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-caribbeantwist/">
-<div class="tag">Demo web</div>
-<h2>Demo Caribbean Twist</h2>
-<p>Restaurante cubano-dominicano en Tampa: demo moderna con fotos reales, menú, catering y QR.</p>
-<div class="url">lmanzano86-ui.github.io/demo-caribbeantwist/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-borinquen/">
-<div class="tag">Demo para cliente</div>
-<h2>Demo El Famoso Borinquen</h2>
-<p>Tienda latina en Tampa: comida caliente, carnicería y abarrotes.</p>
-<div class="url">lmanzano86-ui.github.io/demo-borinquen/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/bravo-supermarkets/">
-<div class="tag">Demo para cliente</div>
-<h2>Bravo Supermarkets</h2>
-<p>Supermercado latino en Tampa: especiales semanales y circular.</p>
-<div class="url">lmanzano86-ui.github.io/bravo-supermarkets/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-inkbass/">
-<div class="tag">Demo para cliente</div>
-<h2>Demo Inkbass Tattoo</h2>
-<p>Estudio de tatuajes en Tampa: estilos, artista y reservas.</p>
-<div class="url">lmanzano86-ui.github.io/demo-inkbass/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/paginas-web/">
-<div class="tag">Mi negocio</div>
-<h2>Páginas web para negocios</h2>
-<p>Presentación de mi servicio: planes, hosting privado y ejemplos.</p>
-<div class="url">lmanzano86-ui.github.io/paginas-web/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-caribbeanclub/">
-<div class="tag">DEMO</div>
-<h2>Caribbean Club Market</h2>
-<p>Demo bilingüe ES/EN con especiales y ofertas</p>
-<div class="url">lmanzano86-ui.github.io/demo-caribbeanclub/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-ultrajewelry/">
-<div class="tag">DEMO</div>
-<h2>Ultra Jewelry</h2>
-<p>Demo elegante marfil y dorado, bilingüe ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-ultrajewelry/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-latinfresh/">
-<div class="tag">Mercado</div>
-<h2>Latin Fresh Market</h2>
-<p>Mercado latino · Tampa y Riverview</p>
-<div class="url">lmanzano86-ui.github.io/demo-latinfresh/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-lalasthreading/">
-<div class="tag">Salón de belleza</div>
-<h2>Lala&#x27;s Threading &amp; Beauty Salon</h2>
-<p>Demo elegante: threading, cejas, maquillaje y más — Tampa FL</p>
-<div class="url">lmanzano86-ui.github.io/demo-lalasthreading/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-willibarbershop/">
-<div class="tag">Barbería</div>
-<h2>Willi Barbershop</h2>
-<p>Demo moderna: reserva en Booksy, precios reales — Tampa FL</p>
-<div class="url">lmanzano86-ui.github.io/demo-willibarbershop/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-maikelsbakery/">
-<div class="tag">PANADERÍA</div>
-<h2>Maikel&#x27;s Florida Bakery</h2>
-<p>Demo moderna: pastelitos, sándwich cubano, cakes de encargo — Tampa FL</p>
-<div class="url">lmanzano86-ui.github.io/demo-maikelsbakery/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-kvconstruction/">
-<div class="tag">CONTRATISTA</div>
-<h2>KV Home Construction</h2>
-<p>Demo moderna: construcción, remodelaciones y piscinas — Tampa FL</p>
-<div class="url">lmanzano86-ui.github.io/demo-kvconstruction/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-senortacos/">
-<div class="tag">restaurante</div>
-<h2>El Señor de los Tacos</h2>
-<p>Demo moderna con pedidos por Square, fotos reales, menú y redes</p>
-<div class="url">lmanzano86-ui.github.io/demo-senortacos/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-mvbbarbershop/">
-<div class="tag">barberia</div>
-<h2>MVB Barbershop</h2>
-<p>Demo deportiva con equipo de 3 barberos, reservas en Booksy y fotos reales</p>
-<div class="url">lmanzano86-ui.github.io/demo-mvbbarbershop/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-zuripetshop/">
-<div class="tag">Tienda de mascotas</div>
-<h2>Zuri Palomas Pet Shop</h2>
-<p>Demo colorida para tienda de mascotas en Tampa</p>
-<div class="url">lmanzano86-ui.github.io/demo-zuripetshop/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-petes-place-north/">
-<div class="tag">eeuu</div>
-<h2>Pete&#x27;s Place North &amp; Liquor Store</h2>
-<p>Bar y licorera en Tampa — demo bilingüe ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-petes-place-north/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-fenix-tattoo/">
-<div class="tag">eeuu</div>
-<h2>Fenix Tattoo Gallery</h2>
-<p>Estudio de tatuajes en Tampa — propuesta de rediseño bilingüe ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-fenix-tattoo/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-lemarques/">
-<div class="tag">eeuu</div>
-<h2>Le Marqués Hair &amp; Beauty</h2>
-<p>Salón de belleza premium en Tampa — demo de lujo bilingüe ES/EN con sistema de reservas</p>
-<div class="url">lmanzano86-ui.github.io/demo-lemarques/</div>
-</a>
+<div class="topbar">
+  <span data-es="Mar – Sáb · 9:30 am – 6:30 pm" data-en="Tue – Sat · 9:30 am – 6:30 pm">Mar – Sáb · 9:30 am – 6:30 pm</span>
+  &nbsp;&nbsp;·&nbsp;&nbsp;<a href="tel:+18132972107">(813) 297-2107</a>
 </div>
-<div class="seccion" id="sec-espana">
-<div class="sec-head"><h2>🇪🇸 Agente España</h2><p>Páginas del agente en España</p></div>
-<div class="empty">Sin páginas todavía &mdash; se agregan automáticamente al publicar.</div>
+
+<header>
+  <div class="medallon"><img src="imgs/logo.png" alt="Le Marqués Hair & Beauty"></div>
+  <div class="marca">LE MARQUÉS</div>
+  <div class="marca-sub" data-es="Hair &amp; Beauty" data-en="Hair &amp; Beauty">Hair &amp; Beauty</div>
+  <div class="lang"><button id="btn-es" class="activo" onclick="setLang('es')">ES</button> · <button id="btn-en" onclick="setLang('en')">EN</button></div>
+</header>
+
+<div class="hero">
+  <div class="script" data-es="Tu momento de brillar" data-en="Your moment to shine">Tu momento de brillar</div>
+  <h1 data-es="comienza aquí" data-en="starts here">comienza aquí</h1>
+  <div class="divisor"><span>✦</span></div>
+  <p data-es="Peluquería, uñas, barbería, faciales, pestañas y maquillaje. Todo tu cuidado en un solo lugar, con trato de realeza."
+     data-en="Hair, nails, barber, facials, lashes and make-up. All your care in one place, with royal treatment.">Peluquería, uñas, barbería, faciales, pestañas y maquillaje. Todo tu cuidado en un solo lugar, con trato de realeza.</p>
+  <div class="cta">
+    <a class="btn btn-negro" href="citas.html" data-es="Reservar mi cita" data-en="Book my appointment">Reservar mi cita</a>
+    <a class="btn btn-oro-borde" href="https://wa.me/18132972107" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+    <a class="btn-texto" href="tel:+18132972107" data-es="o llama al (813) 297-2107" data-en="or call (813) 297-2107">o llama al (813) 297-2107</a>
+  </div>
 </div>
-<div class="seccion" id="sec-brasil">
-<div class="sec-head"><h2>🇧🇷 Agente Brasil</h2><p>Páginas del agente en Brasil</p></div>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-panedefacci/">
-<div class="tag">Padaria</div>
-<h2>Pane Defacci Padaria e Confeitaria</h2>
-<p>Demo trilingüe (PT/ES/EN) para padaria em Foz do Iguaçu, Brasil.</p>
-<div class="url">lmanzano86-ui.github.io/demo-panedefacci/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-casadomel/">
-<div class="tag">Produtos naturais</div>
-<h2>Casa do Mel Foz do Iguaçu</h2>
-<p>Demo trilingüe (PT/ES/EN) para loja de produtos naturais em Foz do Iguaçu, Brasil.</p>
-<div class="url">lmanzano86-ui.github.io/demo-casadomel/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-academia-plena-forma/">
-<div class="tag">brasil</div>
-<h2>Academia Plena Forma</h2>
-<p>Gimnasio en Foz do Iguaçu — demo trilingüe PT/ES/EN</p>
-<div class="url">lmanzano86-ui.github.io/demo-academia-plena-forma/</div>
-</a>
+
+<section>
+  <div class="wrap">
+    <div class="kicker" data-es="Nuestros" data-en="Our">Nuestros</div>
+    <h2 class="titulo" data-es="Servicios" data-en="Services">Servicios</h2>
+    <p class="sub" data-es="Belleza integral para damas y caballeros" data-en="Complete beauty care for ladies and gentlemen">Belleza integral para damas y caballeros</p>
+    <div class="serv-grid">
+      <div class="serv"><div class="mark">✦</div><h3 data-es="Peluquería" data-en="Hair Care">Peluquería</h3><p data-es="Corte, color, balayage y tratamientos" data-en="Cut, color, balayage &amp; treatments">Corte, color, balayage y tratamientos</p></div>
+      <div class="serv"><div class="mark">✦</div><h3 data-es="Uñas" data-en="Nails">Uñas</h3><p data-es="Manicure, pedicure y gel" data-en="Manicure, pedicure &amp; gel">Manicure, pedicure y gel</p></div>
+      <div class="serv"><div class="mark">✦</div><h3 data-es="Barbería" data-en="Barber">Barbería</h3><p data-es="Corte y arreglo para caballeros" data-en="Cuts &amp; grooming for gentlemen">Corte y arreglo para caballeros</p></div>
+      <div class="serv"><div class="mark">✦</div><h3 data-es="Faciales" data-en="Facials">Faciales</h3><p data-es="Limpieza y cuidado de la piel" data-en="Skin cleansing &amp; care">Limpieza y cuidado de la piel</p></div>
+      <div class="serv"><div class="mark">✦</div><h3 data-es="Pestañas" data-en="Lashes">Pestañas</h3><p data-es="Extensiones y realce de mirada" data-en="Extensions &amp; lash lift">Extensiones y realce de mirada</p></div>
+      <div class="serv"><div class="mark">✦</div><h3 data-es="Maquillaje" data-en="Make-up">Maquillaje</h3><p data-es="Social, novias y eventos" data-en="Social, bridal &amp; events">Social, novias y eventos</p></div>
+      <div class="serv"><div class="mark">✦</div><h3 data-es="Depilación" data-en="Waxing">Depilación</h3><p data-es="Cera facial y corporal" data-en="Face &amp; body waxing">Cera facial y corporal</p></div>
+      <div class="serv"><div class="mark">✦</div><h3 data-es="…y más" data-en="…and more">…y más</h3><p data-es="Pregunta por nuestros servicios" data-en="Ask about our services">Pregunta por nuestros servicios</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="banner">
+  <div class="script" data-es="La elegancia es" data-en="Elegance is">La elegancia es</div>
+  <div class="script" data-es="una actitud" data-en="an attitude">una actitud</div>
+  <div class="divisor" style="max-width:220px"><span>✦</span></div>
+  <p data-es="Reserva en línea en menos de un minuto y asegura tu momento." data-en="Book online in under a minute and secure your moment.">Reserva en línea en menos de un minuto y asegura tu momento.</p>
+  <a class="btn btn-oro-borde" style="color:var(--dorado-claro)" href="citas.html" data-es="Reservar mi cita" data-en="Book my appointment">Reservar mi cita</a>
 </div>
-<div class="seccion" id="sec-paises_bajos">
-<div class="sec-head"><h2>🇳🇱 Agente Países Bajos</h2><p>Páginas del agente en Países Bajos</p></div>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-van-der-linde/">
-<div class="tag">Demo Países Bajos</div>
-<h2>Demo — Banketbakkerij Van der Linde</h2>
-<p>Pastelería/heladería icónica de Ámsterdam (desde 1937). Demo en neerlandés.</p>
-<div class="url">lmanzano86-ui.github.io/demo-van-der-linde/</div>
-</a>
-<a class="card" href="https://lmanzano86-ui.github.io/demo-phone-more/">
-<div class="tag">Países Bajos</div>
-<h2>Phone &amp; more</h2>
-<p>Demo trilingüe (NL/ES/EN) — tienda de móviles, Damrak/Dam, Ámsterdam</p>
-<div class="url">lmanzano86-ui.github.io/demo-phone-more/</div>
-</a>
-</div>
-</main>
-<footer><b>LESTER MANZANO</b> &middot; 813 235 3313</footer>
+
+<section>
+  <div class="wrap">
+    <div class="kicker" data-es="Nuestro" data-en="Our">Nuestro</div>
+    <h2 class="titulo" data-es="Salón" data-en="Salon">Salón</h2>
+    <p class="sub" data-es="Un espacio pensado para ti" data-en="A space designed for you">Un espacio pensado para ti</p>
+    <div class="gal">
+      <figure><img src="imgs/fachada.jpg" alt="Fachada de Le Marqués Hair & Beauty"><figcaption data-es="Nuestra fachada · 4433 Gunn Hwy" data-en="Our storefront · 4433 Gunn Hwy">Nuestra fachada · 4433 Gunn Hwy</figcaption></figure>
+      <figure><img src="imgs/interior.jpg" alt="Interior del salón"><figcaption data-es="Recepción" data-en="Reception">Recepción</figcaption></figure>
+      <figure><img src="imgs/logo-marmol.jpg" alt="Logo en mármol y oro"><figcaption data-es="Mármol y oro" data-en="Marble and gold">Mármol y oro</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="edu">
+  <div class="wrap">
+    <div class="edu-card">
+      <div class="grad">✦ &nbsp;<span data-es="Más que un salón" data-en="More than a salon">Más que un salón</span>&nbsp; ✦</div>
+      <h3 data-es="Educación profesional" data-en="Professional education">Educación profesional</h3>
+      <div class="divisor" style="max-width:160px"><span>✦</span></div>
+      <p data-es="José Manuel Toro M., fundador y estilista, es también educador de cosmetología: prepara a futuros profesionales para el examen del Board del estado. Aquí la belleza se hace con conocimiento."
+         data-en="José Manuel Toro M., founder and stylist, is also a cosmetology educator who prepares future professionals for the State Board exam. Here, beauty is crafted with knowledge.">José Manuel Toro M., fundador y estilista, es también educador de cosmetología: prepara a futuros profesionales para el examen del Board del estado. Aquí la belleza se hace con conocimiento.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker" data-es="Lo que dicen" data-en="Kind words">Lo que dicen</div>
+    <h2 class="titulo" data-es="Nuestras clientas" data-en="Our clients">Nuestras clientas</h2>
+    <p class="sub">★★★★★ 5.0 · Booksy</p>
+    <div class="res">
+      <div class="stars">★★★★★</div>
+      <p data-es="«José es un especialista increíble en cabello y color. Quedé muy feliz. ¡El mejor!»" data-en="“José is an amazing specialist on hair and color. I was extremely happy. The best!!”">«José es un especialista increíble en cabello y color. Quedé muy feliz. ¡El mejor!»</p>
+      <div class="quien">Rebecca · Manicure &amp; Pedicure</div>
+    </div>
+    <div class="res">
+      <div class="stars">★★★★★</div>
+      <p data-es="«Fue un excelente servicio, totalmente lo recomiendo.»" data-en="“Excellent service, I totally recommend it.”">«Fue un excelente servicio, totalmente lo recomiendo.»</p>
+      <div class="quien">Alina · Gel manicure</div>
+    </div>
+    <div class="res">
+      <div class="stars">★★★★★</div>
+      <p data-es="«Lo mejor. 100% recomendados.»" data-en="“The best. 100% recommended.”">«Lo mejor. 100% recomendados.»</p>
+      <div class="quien">Dina · Manicure &amp; Pedicure</div>
+    </div>
+    <p class="res-fuente" data-es="Reseñas reales · Booksy" data-en="Real reviews · Booksy">Reseñas reales · Booksy</p>
+  </div>
+</section>
+
+<section class="visita" style="padding:56px 0">
+  <div class="wrap">
+    <div class="kicker" data-es="Te" data-en="We">Te</div>
+    <h2 class="titulo" data-es="Esperamos" data-en="Can't wait">Esperamos</h2>
+    <div class="divisor" style="max-width:200px;margin:20px auto 34px"><span>✦</span></div>
+    <div class="dato"><div class="i">✦</div><div><b data-es="Dirección" data-en="Address">Dirección</b><span>4433 Gunn Hwy, Tampa, FL 33618</span></div></div>
+    <div class="dato"><div class="i">✦</div><div><b data-es="Teléfono" data-en="Phone">Teléfono</b><span><a href="tel:+18132972107">(813) 297-2107</a></span></div></div>
+    <div class="dato"><div class="i">✦</div><div><b data-es="Horario" data-en="Hours">Horario</b><span data-es="Martes a sábado · 9:30 am – 6:30 pm" data-en="Tuesday to Saturday · 9:30 am – 6:30 pm">Martes a sábado · 9:30 am – 6:30 pm</span><br><span style="font-size:14px;color:#8f867a" data-es="Domingo y lunes · solo con cita" data-en="Sunday &amp; Monday · by appointment only">Domingo y lunes · solo con cita</span></div></div>
+    <div class="qrs">
+      <div class="qr"><img src="qr/ubicacion.png" alt="QR ubicación"><p data-es="Cómo llegar" data-en="Directions">Cómo llegar</p></div>
+      <div class="qr"><img src="qr/resena.png" alt="QR reseña"><p data-es="Déjanos tu reseña" data-en="Leave a review">Déjanos tu reseña</p></div>
+    </div>
+    <div class="cta" style="max-width:320px;margin:26px auto 0">
+      <a class="btn btn-oro-borde" style="color:var(--dorado-claro)" href="citas.html" data-es="Reservar mi cita" data-en="Book my appointment">Reservar mi cita</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© Le Marqués Hair &amp; Beauty · Tampa, FL</div>
+  <div style="margin-top:8px" data-es="Demo de propuesta web — precios del sistema de citas marcados como muestra." data-en="Web proposal demo — booking system prices marked as samples.">Demo de propuesta web — precios del sistema de citas marcados como muestra.</div>
+  <div><span class="demo-tag">DEMO · New Age Professional Services</span></div>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-es]').forEach(function(el){
+    el.innerHTML = (l==='es') ? el.getAttribute('data-es') : el.getAttribute('data-en');
+  });
+  document.getElementById('btn-es').classList.toggle('activo', l==='es');
+  document.getElementById('btn-en').classList.toggle('activo', l==='en');
+  try{localStorage.setItem('lm-lang',l);}catch(e){}
+}
+try{var s=localStorage.getItem('lm-lang'); if(s==='en') setLang('en');}catch(e){}
+</script>
 </body>
 </html>
